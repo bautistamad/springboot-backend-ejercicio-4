@@ -9,9 +9,9 @@ public class PersonaBean {
 	private String apellido;
 	private String clave;
 	private String correo;
-	private String codGenero;
+	private String nomGenero;
 	private Date fechaNacimiento;
-	private String codNacionalidad;
+	private String nomNacionalidad;
 
 	public int getNroPersona() {
 		return nroPersona;
@@ -53,12 +53,12 @@ public class PersonaBean {
 		this.correo = correo;
 	}
 
-	public String getCodGenero() {
-		return codGenero;
+	public String getNomGenero() {
+		return nomGenero;
 	}
 
-	public void setCodGenero(String codGenero) {
-		this.codGenero = codGenero;
+	public void setNomGenero(String nomGenero) {
+		this.nomGenero = nomGenero;
 	}
 
 	public Date getFechaNacimiento() {
@@ -69,11 +69,11 @@ public class PersonaBean {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getCodNacionalidad() {
-		return codNacionalidad;
+	public String getNomNacionalidad() {
+		return nomNacionalidad;
 	}
 
-	public void setCodNacionalidad(String codNacionalidad) {
-		this.codNacionalidad = codNacionalidad;
+	public void setNomNacionalidad(String nomNacionalidad) {
+		this.nomNacionalidad = nomNacionalidad;
 	}
 }

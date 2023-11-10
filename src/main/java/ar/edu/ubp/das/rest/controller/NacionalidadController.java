@@ -15,7 +15,7 @@ import ar.edu.ubp.das.rest.repository.NacionalidadRepository;
 
 @RestController
 @RequestMapping(
-  path="api/persona/nacionalidades",
+  path="api/personas/nacionalidades",
   produces={MediaType.APPLICATION_JSON_VALUE}
 )
 
