@@ -29,7 +29,7 @@ public class PersonaController {
     PersonaRepository repository;
 	
     @GetMapping(path="/datos/{id}")
-    public ResponseEntity<List<PersonaDataBean>> getPersona( @PathVariable("id") String id ) {
+    public ResponseEntity<PersonaDataBean> getPersona( @PathVariable("id") String id ) {
       return new ResponseEntity<>(repository.getPersona(id), HttpStatus.OK);
     }
     

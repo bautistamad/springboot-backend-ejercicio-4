@@ -10,6 +10,7 @@ public class PersonaDataBean {
 	private String codGenero;
 	private String fechaNacimiento;
 	private String codNacionalidad;
+	private String hobbies;
 	private String equipos;
 	private String otrasActividades;
 	
@@ -93,6 +94,14 @@ public class PersonaDataBean {
 
 	public void setOtrasActividades(String otrasActividades) {
 		this.otrasActividades = otrasActividades;
+	}
+
+	public String getHobbies() {
+		return hobbies;
+	}
+
+	public void setHobbies(String hobbies) {
+		this.hobbies = hobbies;
 	}
 
 

@@ -25,7 +25,7 @@ public class PersonaRepository {
 	private JdbcTemplate jdbcTpl;
 
 	@SuppressWarnings("unchecked")
-	public List<PersonaDataBean> getPersona(String id) {
+	public PersonaDataBean getPersona(String id) {
 
 		SqlParameterSource in = new MapSqlParameterSource().addValue("id_persona", id);
 
@@ -33,7 +33,12 @@ public class PersonaRepository {
 				.returningResultSet("persona", BeanPropertyRowMapper.newInstance(PersonaDataBean.class));
 
 		Map<String, Object> out = jdbcCall.execute(in);
-		return (List<PersonaDataBean>) out.get("persona");
+		List<PersonaDataBean> personas = (List<PersonaDataBean>) out.get("persona");
+		if (personas.isEmpty()) {
+			return null;
+		}
+		
+		return personas.get(0);
 	}
 	
 	   @SuppressWarnings("unchecked")

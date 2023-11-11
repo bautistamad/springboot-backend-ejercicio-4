@@ -3,7 +3,8 @@ package ar.edu.ubp.das.rest.beans;
 import java.util.Date;
 
 public class PersonaBean {
-
+	
+	private String idPersona;
 	private int nroPersona;
 	private String nombre;
 	private String apellido;
@@ -75,5 +76,13 @@ public class PersonaBean {
 
 	public void setNomNacionalidad(String nomNacionalidad) {
 		this.nomNacionalidad = nomNacionalidad;
+	}
+
+	public String getIdPersona() {
+		return idPersona;
+	}
+
+	public void setIdPersona(String idPersona) {
+		this.idPersona = idPersona;
 	}
 }
