@@ -79,5 +79,28 @@ public class PersonaRepository {
 
 	        return data;
 	    }
+	   
+	   @Transactional
+	   public void updPersona(PersonaDataBean data) {
+	       SqlParameterSource in = new MapSqlParameterSource()
+	           .addValue("nro_persona", data.getNroPersona())
+	           .addValue("apellido", data.getApellido())
+	           .addValue("nombre", data.getNombre())
+	           .addValue("clave", data.getClave())
+	           .addValue("correo", data.getCorreo())
+	           .addValue("cod_genero", data.getCodGenero())
+	           .addValue("fecha_nacimiento", data.getFechaNacimiento())
+	           .addValue("cod_nacionalidad", data.getCodNacionalidad())
+	           .addValue("equipos", data.getEquipos())
+	           .addValue("actividades", data.getActividades())
+	           .addValue("otras_actividades", data.getOtrasActividades());
+
+	       SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTpl)
+	           .withProcedureName("act_persona")
+	           .withSchemaName("dbo");
+
+	       jdbcCall.execute(in);
+	   }
+
 
 }

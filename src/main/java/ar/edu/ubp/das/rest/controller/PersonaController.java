@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,13 @@ public class PersonaController {
     	public ResponseEntity<PersonaDataBean> insPersona(@RequestBody PersonaDataBean persona) {
         	return new ResponseEntity<>(repository.insPersona(persona), HttpStatus.CREATED);
     	}
+ 
+    @PutMapping(path = "/update/{id}", consumes = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<?> updPersona(@PathVariable("id") Integer id, @RequestBody PersonaDataBean persona) {
+        repository.updPersona(persona);
+        return ResponseEntity.ok().build();
+    }
+    
     
 
 }

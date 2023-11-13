@@ -2,7 +2,8 @@ package ar.edu.ubp.das.rest.beans;
 
 
 public class PersonaDataBean {
-
+	
+	private int nroPersona;
 	private String nombre;
 	private String apellido;
 	private String clave;
@@ -102,6 +103,14 @@ public class PersonaDataBean {
 
 	public void setHobbies(String hobbies) {
 		this.hobbies = hobbies;
+	}
+
+	public int getNroPersona() {
+		return nroPersona;
+	}
+
+	public void setNroPersona(int nroPersona) {
+		this.nroPersona = nroPersona;
 	}
 
 
